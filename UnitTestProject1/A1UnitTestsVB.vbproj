@@ -117,6 +117,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\A1ClassLibraryVB\A1ClassLibraryVB.vbproj">
+      <Project>{a3a13156-e405-44b2-a6e0-c23e63e3fe72}</Project>
+      <Name>A1ClassLibraryVB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
