@@ -7,7 +7,7 @@ Public Class Validator
     Shared emailFormatExpression2 As New System.Text.RegularExpressions.Regex("^([0-9a-zA-Z]([.]{0,1}[0-9a-zA-Z])*@senecacollege.on.ca)$")
     Shared phoneExpression1 As New System.Text.RegularExpressions.Regex("^\d{10}$")
     Shared phoneExpression2 As New System.Text.RegularExpressions.Regex("^\(\d{3}\)[ ]?\d{3}[ -]\d{4}$")
-    Shared addressExpression As New System.Text.RegularExpressions.Regex("^\d* [0-9a-zA-Z ]*[.]?$")
+    Shared addressExpression As New System.Text.RegularExpressions.Regex("^\d+ [0-9a-zA-Z ]*[.]?$")
 
     Public Shared Function validateUserName(ByVal value As String) As Boolean
         Return Not userNameExpression.IsMatch(value)

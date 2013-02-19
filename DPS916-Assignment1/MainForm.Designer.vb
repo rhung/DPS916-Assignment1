@@ -323,7 +323,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.AddressBookListBox)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainForm"
-        Me.Text = "Form1"
+        Me.Text = "Raymond and Stanley's Address Book Application"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)

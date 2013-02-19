@@ -209,18 +209,18 @@ Public Class MainForm
 #End Region
 
 #Region "Event Handling"
-    Sub addressBookCreateSuccess_eventHandler() Handles addressBook.createSuccessEvent
+    Sub addressBookCreateSuccess_eventHandler() Handles AddressBook.createSuccessEvent
         ToolStripStatusLabel1.Text = "Record successfully saved"
         recIndex = addressBook.getAllUserNames().IndexOf(UserNameTxtBox.Text)
         updateListBox()
     End Sub
 
-    Sub addressBookUpdateSuccess_eventHandler() Handles addressBook.updateSuccessEvent
+    Sub addressBookUpdateSuccess_eventHandler() Handles AddressBook.updateSuccessEvent
         ToolStripStatusLabel1.Text = "Record successfully updated"
         updateListBox()
     End Sub
 
-    Sub addressBookDeleteSuccess_eventHandler() Handles addressBook.deleteSuccessEvent
+    Sub addressBookDeleteSuccess_eventHandler() Handles AddressBook.deleteSuccessEvent
         ToolStripStatusLabel1.Text = "Record successfully deleted"
         updateListBox()
     End Sub
