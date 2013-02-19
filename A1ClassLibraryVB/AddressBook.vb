@@ -70,24 +70,4 @@ Public Class AddressBook
         Return result
     End Function
 
-    Private Shared Function CompareRecordsByUserName(ByVal record1 As RecordA1, ByVal record2 As RecordA1)
-        If record1.UserName Is Nothing Then
-            If record2.UserName Is Nothing Then
-                ' If both user names nothing then equal
-                Return 0
-            Else
-                ' If record1's userName is nothing and record2's userName not nothing, then record2 is greater
-                Return -1
-            End If
-
-        Else
-            ' If record2's userName is not nothing and record2's userName is nothing, then record1 is greater
-            If record2.UserName Is Nothing Then
-                Return 1
-            Else
-                ' If both are not nothing, compare them and return result
-                Return record1.UserName.CompareTo(record2.UserName)
-            End If
-        End If
-    End Function
 End Class
