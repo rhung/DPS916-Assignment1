@@ -8,51 +8,67 @@ Imports A1ClassLibraryVB
 
     ' called before each test case
     <TestInitialize()> Public Sub Initialize()
-        testValidator = New Validator()
     End Sub
 
     ' called after each test case
     <TestCleanup()> Public Sub CleanUp()
-        testValidator = Nothing
     End Sub
 
     <TestMethod()> Public Sub TestUserNameValidationGood()
-        Assert.IsTrue(testValidator.validateUserName("stsang1"))
+        Assert.IsTrue(Validator.validateUserName("stsang1"))
     End Sub
 
     <TestMethod()> Public Sub TestUserNameValidationBad()
-        Assert.IsFalse(testValidator.validateUserName("@st 541"))
+        Assert.IsFalse(Validator.validateUserName("@st 541"))
     End Sub
 
     <TestMethod()> Public Sub TestEmailFormat1ValidationGood()
-        Assert.IsTrue(testValidator.validateEmail("stsang1@myseneca.ca"))
+        Assert.IsTrue(Validator.validateEmail("stsang1@myseneca.ca"))
     End Sub
 
     <TestMethod()> Public Sub TestEmailFormat1ValidationBad()
-        Assert.IsFalse(testValidator.validateEmail("stsang1-bad@senecacollege.on.ca"))
+        Assert.IsFalse(Validator.validateEmail("stsang1-bad@senecacollege.on.ca"))
     End Sub
 
     <TestMethod()> Public Sub TestEmailFormat2ValidationGood()
-        Assert.IsTrue(testValidator.validateEmail("stanley.tsang@senecacollege.on.ca"))
+        Assert.IsTrue(Validator.validateEmail("stanley.tsang@senecacollege.on.ca"))
     End Sub
 
     <TestMethod()> Public Sub TestEmailFormat2ValidationBad()
-        Assert.IsFalse(testValidator.validateEmail("stsang1-bad@myseneca.on.ca"))
+        Assert.IsFalse(Validator.validateEmail("stsang1-bad@myseneca.on.ca"))
     End Sub
 
     <TestMethod()> Public Sub TestPhoneNumberValidationGood()
-        Assert.IsTrue(True)
+        Assert.IsTrue(Validator.validatePhone("1234567890"))
     End Sub
 
+
     <TestMethod()> Public Sub TestPhoneNumberValidationBad()
-        Assert.IsFalse(False)
+        Assert.IsFalse(Validator.validatePhone("7412058"))
+    End Sub
+
+    <TestMethod()> Public Sub TestPhoneNumberWithCharactersValidationGood()
+        Assert.IsTrue(Validator.validatePhone("(123) 456-7890"))
+    End Sub
+
+    <TestMethod()> Public Sub TestPhoneNumberWithCharactersValidationBad()
+        Assert.IsFalse(Validator.validatePhone("(123( 456-7890"))
     End Sub
 
     <TestMethod()> Public Sub TestAddressValidationGood()
-        Assert.IsTrue(True)
+        Assert.IsTrue(Validator.validateAddress("70 The Pond Road"))
     End Sub
 
-    <TestMethod()> Public Sub TestAddressValidationBad()
-        Assert.IsFalse(False)
+    <TestMethod()> Public Sub TestAddressWithPeriodValidationGood()
+        Assert.IsTrue(Validator.validateAddress("70 The Pond Road."))
     End Sub
+
+    <TestMethod()> Public Sub TestAddressWithNoNumberValidationBad()
+        Assert.IsFalse(Validator.validateAddress("The Pond Road"))
+    End Sub
+
+    <TestMethod()> Public Sub TestAddressWithQuestionMarkValidationBad()
+        Assert.IsFalse(Validator.validateAddress("70 The Pond Road?"))
+    End Sub
+
 End Class
