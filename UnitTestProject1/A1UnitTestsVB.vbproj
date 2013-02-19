@@ -118,6 +118,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\A1ClassLibraryCS\A1ClassLibraryCS.csproj">
+      <Project>{257c32e4-93d0-48a3-b2a4-59c8256782d8}</Project>
+      <Name>A1ClassLibraryCS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\A1ClassLibraryVB\A1ClassLibraryVB.vbproj">
       <Project>{a3a13156-e405-44b2-a6e0-c23e63e3fe72}</Project>
       <Name>A1ClassLibraryVB</Name>
