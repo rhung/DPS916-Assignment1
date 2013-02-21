@@ -1,4 +1,10 @@
-﻿Imports A1ClassLibraryVB
+﻿'   DPS916 - Visual Basic Course
+'   Coded By: Raymond Hung and Stanley Tsang
+'   Assignment 1
+'   AddressForm.vb
+'   Last Modified February 20 2013
+
+Imports A1ClassLibraryVB
 
 Public Class AddressForm
     Public addresses As List(Of String)
@@ -24,7 +30,7 @@ Public Class AddressForm
         addresses = New List(Of String)
         For i As Integer = 0 To (DataGridView1.RowCount - 1)
             Dim cell = DataGridView1.Rows(i).Cells("AddCol")
-            If cell.Value IsNot Nothing And cell.Style.BackColor <> System.Drawing.Color.Red Then
+            If cell.Value IsNot Nothing AndAlso cell.Style.BackColor <> System.Drawing.Color.Red Then
                 addresses.Add(cell.Value.ToString())
             End If
         Next
@@ -34,7 +40,7 @@ Public Class AddressForm
     Private Sub PhoneaddressesForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Depending on the values in addresses fill in the table as required
         DataGridView1.Rows.Clear()
-        If addresses IsNot Nothing And addresses.Count > 0 Then
+        If addresses IsNot Nothing AndAlso addresses.Count > 0 Then
             For Each value In addresses
                 DataGridView1.Rows.Add(value)
             Next

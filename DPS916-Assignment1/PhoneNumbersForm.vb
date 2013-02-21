@@ -1,4 +1,10 @@
-﻿Imports A1ClassLibraryVB
+﻿'   DPS916 - Visual Basic Course
+'   Coded By: Raymond Hung and Stanley Tsang
+'   Assignment 1
+'   PhoneNumbersForm.vb
+'   Last Modified February 20 2013
+
+Imports A1ClassLibraryVB
 
 Public Class PhoneNumbersForm
 
@@ -26,7 +32,7 @@ Public Class PhoneNumbersForm
         numbers = New List(Of String)
         For i As Integer = 0 To (DataGridView1.RowCount - 1)
             Dim cell = DataGridView1.Rows(i).Cells("PhoneNumber")
-            If cell.Value IsNot Nothing And cell.Style.BackColor <> System.Drawing.Color.Red Then
+            If cell.Value IsNot Nothing AndAlso cell.Style.BackColor <> System.Drawing.Color.Red Then
 
                 If check.IsMatch(cell.Value.ToString()) = False Then
                     cell.Value = "(" + cell.Value.ToString().Substring(0, 3) + ") " + cell.Value.ToString().Substring(3, 3) + "-" + cell.Value.ToString().Substring(6)
@@ -40,7 +46,7 @@ Public Class PhoneNumbersForm
     Private Sub PhoneNumbersForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Depending on the values in numbers fill in the table as required
         DataGridView1.Rows.Clear()
-        If numbers IsNot Nothing And numbers.Count > 0 Then
+        If numbers IsNot Nothing AndAlso numbers.Count > 0 Then
             For Each value In numbers
                 DataGridView1.Rows.Add(value)
             Next

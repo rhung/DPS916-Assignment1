@@ -1,4 +1,10 @@
-﻿Imports A1ClassLibraryVB
+﻿'   DPS916 - Visual Basic Course
+'   Coded By: Raymond Hung and Stanley Tsang
+'   Assignment 1
+'   EmailForm.vb
+'   Last Modified February 20 2013
+
+Imports A1ClassLibraryVB
 
 Public Class EmailForm
     Public emailList As List(Of String)
@@ -24,7 +30,7 @@ Public Class EmailForm
         emailList = New List(Of String)
         For i As Integer = 0 To (DataGridView1.RowCount - 1)
             Dim cell = DataGridView1.Rows(i).Cells("EmailCol")
-            If cell.Value IsNot Nothing And cell.Style.BackColor <> System.Drawing.Color.Red Then
+            If cell.Value IsNot Nothing AndAlso cell.Style.BackColor <> System.Drawing.Color.Red Then
                 emailList.Add(cell.Value.ToString())
             End If
         Next
@@ -34,7 +40,7 @@ Public Class EmailForm
     Private Sub EmailListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Depending on the values in emailList fill in the table as required
         DataGridView1.Rows.Clear()
-        If emailList IsNot Nothing And emailList.Count > 0 Then
+        If emailList IsNot Nothing AndAlso emailList.Count > 0 Then
             For Each value In emailList
                 DataGridView1.Rows.Add(value)
             Next

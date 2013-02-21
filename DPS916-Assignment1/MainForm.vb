@@ -1,4 +1,10 @@
-﻿Imports A1ClassLibraryVB
+﻿'   DPS916 - Visual Basic Course
+'   Coded By: Raymond Hung and Stanley Tsang
+'   Assignment 1
+'   MainForm.vb
+'   Last Modified February 20 2013
+
+Imports A1ClassLibraryVB
 Imports A1ClassLibraryCS
 
 Public Class MainForm
@@ -25,10 +31,13 @@ Public Class MainForm
             UserNameTxtBox.Text = rec.UserName
             PhoneNumberTxtBox.BackColor = Color.White
             PhoneNumberTxtBox.Text = If(rec.PhoneNumbers IsNot Nothing AndAlso rec.PhoneNumbers.Count <> 0, rec.PhoneNumbers(0), String.Empty)
+            phones = rec.PhoneNumbers
             AddressTxtBox.BackColor = Color.White
             AddressTxtBox.Text = If(rec.Addresses IsNot Nothing AndAlso rec.Addresses.Count <> 0, rec.Addresses(0), String.Empty)
+            addresses = rec.Addresses
             EmailTxtBox.BackColor = Color.White
             EmailTxtBox.Text = If(rec.EmailAddresses IsNot Nothing AndAlso rec.EmailAddresses.Count <> 0, rec.EmailAddresses(0), String.Empty)
+            emails = rec.EmailAddresses
             NotesTxtBox.Text = If(rec.Notes Is Nothing, String.Empty, rec.Notes)
         End If
     End Sub
@@ -62,6 +71,8 @@ Public Class MainForm
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
 
+        ' Set the file name to empty so that there are no residual information left over from previous saves
+        SaveFileDialog1.FileName = String.Empty
         Dim Result = SaveFileDialog1.ShowDialog()
         If Result = DialogResult.Cancel Then
             ToolStripStatusLabel1.Text = "Save cancelled"
@@ -103,8 +114,9 @@ Public Class MainForm
     End Sub
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
-        Dim result As DialogResult
+        ' Clear file name to remove previous open attempt texts
         OpenFileDialog1.FileName = String.Empty
+        Dim result As DialogResult
         ToolStripStatusLabel1.Text = "Opening address book..."
         result = OpenFileDialog1.ShowDialog()
         If result = DialogResult.Cancel Then
@@ -129,6 +141,7 @@ Public Class MainForm
         Dim records = addressBook.Records
 
         ' Create record information
+        record = New RecordA1
         record.UserName = UserNameTxtBox.Text
         record.Addresses = addresses
         record.EmailAddresses = emails
@@ -156,6 +169,11 @@ Public Class MainForm
             ToolStripStatusLabel1.Text = "Record unable to update"
             addressBook.updateRecord(recIndex, record)
         End If
+
+        recIndex = records.IndexOf(record)
+        AddressBookListBox.SelectedIndex = recIndex
+        showRecord()
+
     End Sub
 
     Private Sub AddressBookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddressBookToolStripMenuItem.Click

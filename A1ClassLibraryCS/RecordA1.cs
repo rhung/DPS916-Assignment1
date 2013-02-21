@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*   DPS916 - Visual Basic Course
+ *   Coded By: Raymond Hung and Stanley Tsang
+ *   Assignment 1
+ *   RecordA1.cs
+ *   Last Modified February 20 2013
+ * */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

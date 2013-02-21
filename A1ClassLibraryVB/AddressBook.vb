@@ -1,4 +1,10 @@
-﻿Imports A1ClassLibraryCS
+﻿' DPS916 - Visual Basic Course
+' Coded By: Raymond Hung and Stanley Tsang
+' Assignment 1
+' AddressBook.vb
+' Last Modified February 20 2013
+
+Imports A1ClassLibraryCS
 Imports Newtonsoft.Json
 Imports System.Linq
 

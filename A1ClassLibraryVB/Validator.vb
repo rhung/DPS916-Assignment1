@@ -1,4 +1,10 @@
-﻿Imports System.Text.RegularExpressions
+﻿' DPS916 - Visual Basic Course
+' Coded By: Raymond Hung and Stanley Tsang
+' Assignment 1
+' Validator.vb
+' Last Modified February 20 2013
+
+Imports System.Text.RegularExpressions
 
 Public Class Validator
 
