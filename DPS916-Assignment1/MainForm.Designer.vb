@@ -322,6 +322,9 @@ Partial Class MainForm
         Me.Controls.Add(Me.NewButton)
         Me.Controls.Add(Me.AddressBookListBox)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(725, 439)
+        Me.MinimumSize = New System.Drawing.Size(725, 439)
         Me.Name = "MainForm"
         Me.Text = "Raymond and Stanley's Address Book Application"
         Me.Panel1.ResumeLayout(False)

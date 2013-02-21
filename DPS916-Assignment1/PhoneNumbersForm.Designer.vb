@@ -80,6 +80,8 @@ Partial Class PhoneNumbersForm
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.MaximumSize = New System.Drawing.Size(331, 433)
+        Me.MinimumSize = New System.Drawing.Size(331, 433)
         Me.Name = "PhoneNumbersForm"
         Me.Text = "Form2"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

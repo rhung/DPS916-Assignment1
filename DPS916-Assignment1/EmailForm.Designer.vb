@@ -43,9 +43,9 @@ Partial Class EmailForm
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 378)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 373)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(314, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(315, 22)
         Me.StatusStrip1.TabIndex = 11
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -75,10 +75,12 @@ Partial Class EmailForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(314, 400)
+        Me.ClientSize = New System.Drawing.Size(315, 395)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.MaximumSize = New System.Drawing.Size(331, 433)
+        Me.MinimumSize = New System.Drawing.Size(331, 433)
         Me.Name = "EmailForm"
         Me.Text = "EmailForm"
         Me.StatusStrip1.ResumeLayout(False)
